@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:system="clr-namespace:System;assembly=mscorlib">
-
+    
     <system:String x:Key="Menu_File">File</system:String>
     <system:String x:Key="Menu_File_New_Profile">New profile</system:String>
     <system:String x:Key="Menu_File_Load_Profile">Load profile</system:String>
@@ -13,4 +13,13 @@
     <system:String x:Key="Menu_Edit_Settings">Settings</system:String>
 
     <system:String x:Key="Menu_Help">Help</system:String>
+
+    <system:String x:Key="Login">Login</system:String>
+    <system:String x:Key="Password">Password</system:String>
+    <system:String x:Key="LogIn">Log to kSpot</system:String>
+    <system:String x:Key="LoginAsFacebook">Login as Facebook account</system:String>
+    <system:String x:Key="LoginOr">Or</system:String>
+    <system:String x:Key="Register">Register</system:String>
+    <system:String x:Key="RegisterAlert">Don't have account? Create new one!</system:String>
+    <system:String x:Key="Log_In">Log In</system:String>
 </ResourceDictionary>

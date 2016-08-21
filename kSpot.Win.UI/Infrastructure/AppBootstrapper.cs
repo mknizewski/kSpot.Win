@@ -21,7 +21,13 @@ namespace kSpot.Win.UI.Infrastructure
 
         protected override void OnStartup(object sender, StartupEventArgs e)
         {
-            DisplayRootViewFor<IMainWindowViewModel>();
+            DisplayRootViewFor<ILoginViewModel>();
+        }
+
+        protected override void OnExit(object sender, EventArgs e)
+        {
+            _ninjectBindings.Dispose();
+            base.OnExit(sender, e);
         }
 
         protected override object GetInstance(Type service, string key)

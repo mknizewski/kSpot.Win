@@ -6,13 +6,13 @@ using System;
 
 namespace kSpot.Win.UI.Infrastructure
 {
-    public class NinjectBindings
+    public class NinjectBindings : IDisposable
     {
-        private IKernel _container;
+        public static IKernel Kernel;
 
         private NinjectBindings()
         {
-            this._container = new StandardKernel();
+            Kernel = new StandardKernel();
             AddBindings();
         }
 
@@ -26,13 +26,19 @@ namespace kSpot.Win.UI.Infrastructure
         /// </summary>
         private void AddBindings()
         {
-            this._container.Bind<IMainWindowViewModel>().To<MainWindowViewModel>();
-            this._container.Bind<IWindowManager>().To<WindowManager>();
+            Kernel.Bind<IMainWindowViewModel>().To<MainWindowViewModel>();
+            Kernel.Bind<IWindowManager>().To<WindowManager>();
+            Kernel.Bind<ILoginViewModel>().To<LoginViewModel>();
         }
 
         public object GetInstance(Type serviceType)
         {
-            return _container.Get(serviceType);
+            return Kernel.Get(serviceType);
+        }
+
+        public void Dispose()
+        {
+            Kernel.Dispose();
         }
     }
 }

@@ -91,6 +91,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Views\LoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MainWindowView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -101,8 +105,13 @@
     </Compile>
     <Compile Include="Infrastructure\AppBootstrapper.cs" />
     <Compile Include="Infrastructure\NinjectBindings.cs" />
+    <Compile Include="Interfaces\ILoginViewModel.cs" />
     <Compile Include="Interfaces\IMainWindowViewModel.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="Views\LoginView.xaml.cs">
+      <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainWindowView.xaml.cs">
       <DependentUpon>MainWindowView.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -175,6 +184,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="kSpot-icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Graphics\loading.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
