@@ -8,33 +8,37 @@
         Background="Gray">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="20"></RowDefinition>
             <RowDefinition Height="30"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="10*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Menu Grid.Row="0" Background="Gray">
-            <MenuItem Header="{DynamicResource Menu_File}">
-                <MenuItem Header="{DynamicResource Menu_File_New_Profile}"></MenuItem>
-                <Separator />
-                <MenuItem Header="{DynamicResource Menu_File_Load_Profile}"></MenuItem>
-                <MenuItem Header="{DynamicResource Menu_File_Save_Profile}"></MenuItem>
-                <Separator />
-                <MenuItem Header="{DynamicResource Menu_File_LogAs}"></MenuItem>
-                <Separator />
-                <MenuItem Header="{DynamicResource Menu_File_Quit}"></MenuItem>
-            </MenuItem>
-            <MenuItem Header="{DynamicResource Menu_Edit}">
-                <MenuItem Header="{DynamicResource Menu_Edit_Settings}"></MenuItem>
-            </MenuItem>
-            <MenuItem Header="{DynamicResource Menu_Help}">
+        <DockPanel Grid.Row="0" Background="Gray">
+            <Menu Background="Gray">
+                <MenuItem Header="{DynamicResource Menu_File}">
+                    <MenuItem Header="{DynamicResource Menu_File_New_Profile}"></MenuItem>
+                    <Separator />
+                    <MenuItem Header="{DynamicResource Menu_File_Load_Profile}"></MenuItem>
+                    <MenuItem Header="{DynamicResource Menu_File_Save_Profile}"></MenuItem>
+                    <Separator />
+                    <MenuItem Header="{DynamicResource Menu_File_LogAs}"></MenuItem>
+                    <Separator />
+                    <MenuItem Header="{DynamicResource Menu_File_Quit}"></MenuItem>
+                </MenuItem>
+                <MenuItem Header="{DynamicResource Menu_Edit}">
+                    <MenuItem Header="{DynamicResource Menu_Edit_Settings}"></MenuItem>
+                </MenuItem>
+                <MenuItem Header="{DynamicResource Menu_Help}">
 
-            </MenuItem>
-        </Menu>
-        <Separator Grid.Row="1" Background="Black" VerticalAlignment="Bottom"></Separator>
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+        <DockPanel Grid.Row="1" Background="Gray">
+            <Rectangle VerticalAlignment="Bottom" Height="1" Fill="Black"></Rectangle>
+        </DockPanel>
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="10*"></ColumnDefinition>
+                <ColumnDefinition Width="5*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <DockPanel Grid.Column="0">
                 <StackPanel Orientation="Vertical"></StackPanel>
@@ -45,6 +49,9 @@
                     <RowDefinition Height="10*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
+                <DockPanel Grid.Row="1">
+                    <Rectangle Height="1" VerticalAlignment="Top" Fill="Black"></Rectangle>
+                </DockPanel>
             </Grid>
         </Grid>
     </Grid>
