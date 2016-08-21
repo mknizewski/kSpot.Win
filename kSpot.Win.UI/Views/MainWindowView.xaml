@@ -1,0 +1,51 @@
+﻿<Window x:Class="kSpot.Win.UI.Views.MainWindowView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="kSpot" Height="350" Width="525"
+        Background="Gray">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="10*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0" Background="Gray">
+            <MenuItem Header="{DynamicResource Menu_File}">
+                <MenuItem Header="{DynamicResource Menu_File_New_Profile}"></MenuItem>
+                <Separator />
+                <MenuItem Header="{DynamicResource Menu_File_Load_Profile}"></MenuItem>
+                <MenuItem Header="{DynamicResource Menu_File_Save_Profile}"></MenuItem>
+                <Separator />
+                <MenuItem Header="{DynamicResource Menu_File_LogAs}"></MenuItem>
+                <Separator />
+                <MenuItem Header="{DynamicResource Menu_File_Quit}"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="{DynamicResource Menu_Edit}">
+                <MenuItem Header="{DynamicResource Menu_Edit_Settings}"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="{DynamicResource Menu_Help}">
+
+            </MenuItem>
+        </Menu>
+        <Separator Grid.Row="1" Background="Black" VerticalAlignment="Bottom"></Separator>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="10*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <DockPanel Grid.Column="0">
+                <StackPanel Orientation="Vertical"></StackPanel>
+                <Rectangle Width="1" HorizontalAlignment="Right" Fill="Black"></Rectangle>
+            </DockPanel>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
