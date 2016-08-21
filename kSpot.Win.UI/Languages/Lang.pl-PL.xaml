@@ -2,6 +2,24 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
                     xmlns:system="clr-namespace:System;assembly=mscorlib">
 
-  <system:String x:Key="Username">Login:</system:String>
-  <system:String x:Key="Password">Hasło:</system:String>
+    <system:String x:Key="Menu_File">Plik</system:String>
+    <system:String x:Key="Menu_File_New_Profile">Nowy profil</system:String>
+    <system:String x:Key="Menu_File_Load_Profile">Ładuj profil</system:String>
+    <system:String x:Key="Menu_File_Save_Profile">Zapisz profil</system:String>
+    <system:String x:Key="Menu_File_LogAs">Zaloguj jako</system:String>
+    <system:String x:Key="Menu_File_Quit">Wyjście</system:String>
+
+    <system:String x:Key="Menu_Edit">Edytuj</system:String>
+    <system:String x:Key="Menu_Edit_Settings">Ustawienia</system:String>
+
+    <system:String x:Key="Menu_Help">Pomoc</system:String>
+
+    <system:String x:Key="Login">Login</system:String>
+    <system:String x:Key="Password">Hasło</system:String>
+    <system:String x:Key="LogIn">Zaloguj się do kSpot</system:String>
+    <system:String x:Key="LoginAsFacebook">Zaloguj się przez Facebook</system:String>
+    <system:String x:Key="LoginOr">Lub</system:String>
+    <system:String x:Key="Register">Rejestracja</system:String>
+    <system:String x:Key="RegisterAlert">Nie masz konta? Stwórz nowe!</system:String>
+    <system:String x:Key="Log_In">Zaloguj się</system:String>
 </ResourceDictionary>

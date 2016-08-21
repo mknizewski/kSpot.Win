@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:kSpot.Win.UI.Views"
         xmlns:UI="clr-namespace:kSpot.Win.UI" x:Class="kSpot.Win.UI.Views.LoginView"
         mc:Ignorable="d"
-        Title="kSpot" MinHeight="300" MinWidth="300" MaxWidth="500" MaxHeight="500" Height="300" Width="300" Icon="/kSpot.Win.UI;component/kSpot-icon.ico" WindowStartupLocation="CenterScreen"
+        Title="kSpot" MinHeight="300" MinWidth="300" MaxWidth="500" MaxHeight="500" Height="400" Width="500" Icon="/kSpot.Win.UI;component/kSpot-icon.ico" WindowStartupLocation="CenterScreen"
         xmlns:cm="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro.Platform">
     <Grid>
         <Grid.RowDefinitions>

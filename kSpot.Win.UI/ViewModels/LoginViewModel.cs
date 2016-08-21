@@ -1,9 +1,11 @@
 ﻿using Caliburn.Micro;
 using kSpot.Win.UI.Infrastructure;
 using kSpot.Win.UI.Interfaces;
+using kSpot.Win.UI.Properties;
 using Ninject;
 using System;
 using System.Diagnostics;
+using System.Windows;
 
 namespace kSpot.Win.UI.ViewModels
 {
@@ -73,7 +75,10 @@ namespace kSpot.Win.UI.ViewModels
         public void GoToRegisterPage()
         {
             //TODO: Wszystko brać ze słownika
-            Process.Start("www.google.com");         
+            ResourceDictionary rd = new ResourceDictionary();
+            rd.Source = new Uri("/Languages/Lang.pl-PL.xaml", UriKind.Relative);
+
+            Application.Current.Resources.MergedDictionaries.Add(rd);
         }
 
         public void LogToSystem()
