@@ -1,11 +1,14 @@
 ﻿using Caliburn.Micro;
 using kSpot.Win.UI.Infrastructure;
 using kSpot.Win.UI.Interfaces;
-using kSpot.Win.UI.Properties;
+using kSpot.Win.UI.Views;
 using Ninject;
 using System;
-using System.Diagnostics;
+using System.Threading;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media.Imaging;
+using WpfAnimatedGif;
 
 namespace kSpot.Win.UI.ViewModels
 {
@@ -16,6 +19,7 @@ namespace kSpot.Win.UI.ViewModels
         public LoginViewModel(IWindowManager windowManager)
         {
             this._windowManager = windowManager;
+
         }
 
         public string Login
@@ -79,6 +83,13 @@ namespace kSpot.Win.UI.ViewModels
             rd.Source = new Uri("/Languages/Lang.pl-PL.xaml", UriKind.Relative);
 
             Application.Current.Resources.MergedDictionaries.Add(rd);
+            var view = this.GetView();
+
+            LoginView w = view as LoginView;
+            var loadingGrid = w.LoadingScreen as Grid;
+            loadingGrid.Visibility = Visibility.Visible;
+
+            
         }
 
         public void LogToSystem()
