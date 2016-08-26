@@ -10,7 +10,7 @@ namespace kSpot.Win.DAL.Dictionaries
             get
             {
                 var connectionStringSettings = ConfigurationManager.ConnectionStrings["kSpotCS"];
-                var connectionString = connectionStringSettings.DecryptConnectionString();
+                var connectionString = connectionStringSettings.GetDecryptConnectionString();
 
                 return connectionString;
             }
