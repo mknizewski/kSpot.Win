@@ -62,13 +62,7 @@ namespace kSpot.Win.DAL.Context
 
             context.DictAccountTypes.Add(dictAccountTypeAdmin);
             context.DictAccountTypes.Add(dictAccountTypeUser);
-
             context.SaveChanges();
-        }
-
-        public override void InitializeDatabase(kSpotContext context)
-        {
-            base.InitializeDatabase(context);
         }
     }
 }
