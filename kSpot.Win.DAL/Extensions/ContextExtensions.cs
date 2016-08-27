@@ -9,7 +9,7 @@ namespace kSpot.Win.DAL.Extensions
         {
             string encryptedConnectionString = cssc.ConnectionString;
             string decryptedConnectionString = SecureString.Decrypt(encryptedConnectionString);
-             
+
             return decryptedConnectionString;
         }
     }

@@ -2,13 +2,12 @@
 using kSpot.Win.UI.Interfaces;
 using System;
 using System.Windows;
+using System.Windows.Threading;
 
 namespace kSpot.Win.UI.Infrastructure
 {
     public class AppBootstrapper : BootstrapperBase
     {
-        private NinjectBindings _ninjectBindings;
-
         public AppBootstrapper()
         {
             Initialize();
@@ -16,7 +15,6 @@ namespace kSpot.Win.UI.Infrastructure
 
         protected override void Configure()
         {
-            _ninjectBindings = NinjectBindings.Create();
         }
 
         protected override void OnStartup(object sender, StartupEventArgs e)
@@ -24,15 +22,19 @@ namespace kSpot.Win.UI.Infrastructure
             DisplayRootViewFor<ILoginViewModel>();
         }
 
-        protected override void OnExit(object sender, EventArgs e)
-        {
-            _ninjectBindings.Dispose();
-            base.OnExit(sender, e);
-        }
-
         protected override object GetInstance(Type service, string key)
         {
-            return _ninjectBindings.GetInstance(service);
+            return NinjectBindings.GetInstance(service);
+        }
+
+        /// <summary>
+        /// Metoda przechwytuje wszystkie wyjątki zgłoszone w programie i wysyła log do DB
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected override void OnUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
+        {
+            base.OnUnhandledException(sender, e);
         }
     }
 }

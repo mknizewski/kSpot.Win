@@ -28,7 +28,6 @@
                     <MenuItem Header="{DynamicResource Menu_Edit_Settings}"></MenuItem>
                 </MenuItem>
                 <MenuItem Header="{DynamicResource Menu_Help}">
-
                 </MenuItem>
             </Menu>
         </DockPanel>

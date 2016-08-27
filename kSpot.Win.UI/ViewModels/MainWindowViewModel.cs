@@ -7,7 +7,6 @@ namespace kSpot.Win.UI.ViewModels
     {
         public MainWindowViewModel()
         {
-            
         }
     }
 }

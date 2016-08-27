@@ -7,9 +7,13 @@
         bool Remember { get; set; }
 
         bool CheckCredentials();
+
         void GoToRegisterPage();
+
         void LogToSystem();
+
         bool CanLogin();
+
         void Dispose();
     }
 }

@@ -55,14 +55,17 @@
     <Compile Include="Dictionaries\ContextDictionary.cs" />
     <Compile Include="Extensions\ContextExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tables\DictAccountTypes.cs" />
+    <Compile Include="Tables\LogsExceptions.cs" />
+    <Compile Include="Tables\News.cs" />
+    <Compile Include="Tables\Users.cs" />
+    <Compile Include="Tables\UsersProfilesBackup.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Tables\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Cryptography\Cryptography.csproj">
       <Project>{fa689cfd-ffbb-4e14-8a09-3227eb315cf7}</Project>

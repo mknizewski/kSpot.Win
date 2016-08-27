@@ -6,39 +6,28 @@ using System;
 
 namespace kSpot.Win.UI.Infrastructure
 {
-    public class NinjectBindings : IDisposable
+    public static class NinjectBindings
     {
-        public static IKernel Kernel;
+        private static IKernel Kernel;
 
-        private NinjectBindings()
+        static NinjectBindings()
         {
-            Kernel = new StandardKernel();
             AddBindings();
-        }
-
-        public static NinjectBindings Create()
-        {
-            return new NinjectBindings();
         }
 
         /// <summary>
         /// W tej metodzie wstrzykujemy zależności
         /// </summary>
-        private void AddBindings()
+        private static void AddBindings()
         {
             Kernel.Bind<IMainWindowViewModel>().To<MainWindowViewModel>();
             Kernel.Bind<IWindowManager>().To<WindowManager>();
             Kernel.Bind<ILoginViewModel>().To<LoginViewModel>();
         }
 
-        public object GetInstance(Type serviceType)
+        public static object GetInstance(Type serviceType)
         {
             return Kernel.Get(serviceType);
-        }
-
-        public void Dispose()
-        {
-            Kernel.Dispose();
         }
     }
 }

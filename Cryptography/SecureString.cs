@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Text;
-using System.Security.Cryptography;
 using System.IO;
 using System.Linq;
-
+using System.Security.Cryptography;
+using System.Text;
 
 namespace Cryptography
 {
@@ -14,7 +13,7 @@ namespace Cryptography
         private const string Password = "!QAZ2wsx";
 
         public static string Encrypt(string plainText)
-        { 
+        {
             var saltStringBytes = Generate256BitsOfRandomEntropy();
             var ivStringBytes = Generate256BitsOfRandomEntropy();
             var plainTextBytes = Encoding.UTF8.GetBytes(plainText);

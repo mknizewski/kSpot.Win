@@ -2,13 +2,9 @@
 using kSpot.Win.UI.Infrastructure;
 using kSpot.Win.UI.Interfaces;
 using kSpot.Win.UI.Views;
-using Ninject;
 using System;
-using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media.Imaging;
-using WpfAnimatedGif;
 
 namespace kSpot.Win.UI.ViewModels
 {
@@ -19,7 +15,6 @@ namespace kSpot.Win.UI.ViewModels
         public LoginViewModel(IWindowManager windowManager)
         {
             this._windowManager = windowManager;
-
         }
 
         public string Login
@@ -73,7 +68,6 @@ namespace kSpot.Win.UI.ViewModels
 
         public void Dispose()
         {
-
         }
 
         public void GoToRegisterPage()
@@ -88,13 +82,11 @@ namespace kSpot.Win.UI.ViewModels
             LoginView w = view as LoginView;
             var loadingGrid = w.LoadingScreen as Grid;
             loadingGrid.Visibility = Visibility.Visible;
-
-            
         }
 
         public void LogToSystem()
         {
-            var mainWindow = NinjectBindings.Kernel.Get(typeof(IMainWindowViewModel));
+            var mainWindow = NinjectBindings.GetInstance(typeof(IMainWindowViewModel));
 
             //TODO: Logika
 
