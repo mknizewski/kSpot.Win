@@ -77,7 +77,7 @@ namespace kSpot.Win.UI.ViewModels
             //ResourceDictionary rd = new ResourceDictionary();
             //rd.Source = new Uri(LanguageDictionary.PolishLanguage, UriKind.Relative);
 
-            Application.Current.Resources.MergedDictionaries.Add(rd);
+            //Application.Current.Resources.MergedDictionaries.Add(rd);
             var view = this.GetView();
 
             LoginView w = view as LoginView;
