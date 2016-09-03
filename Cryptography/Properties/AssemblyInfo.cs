@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("kSpot.Win.DAL")]
+[assembly: AssemblyTitle("Cryptography")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("kSpot.Win.DAL")]
+[assembly: AssemblyProduct("Cryptography")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("b2dfed84-c387-407d-a11c-8529c907893a")]
+[assembly: Guid("fa689cfd-ffbb-4e14-8a09-3227eb315cf7")]
 
 // Version information for an assembly consists of the following four values:
 //

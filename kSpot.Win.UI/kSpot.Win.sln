@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kSpot.Win.DAL", "..\kSpot.W
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "kSpot.Win.Setup", "..\kSpot.Win.Setup\kSpot.Win.Setup.vdproj", "{EECDAA77-DCBB-473F-A746-79E0FDA359D9}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{5F8A3082-677D-4990-BCC0-74C05F847262}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cryptography", "..\Cryptography\Cryptography.csproj", "{FA689CFD-FFBB-4E14-8A09-3227EB315CF7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,8 +35,15 @@ Global
 		{B2DFED84-C387-407D-A11C-8529C907893A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EECDAA77-DCBB-473F-A746-79E0FDA359D9}.Debug|Any CPU.ActiveCfg = Debug
 		{EECDAA77-DCBB-473F-A746-79E0FDA359D9}.Release|Any CPU.ActiveCfg = Release
+		{FA689CFD-FFBB-4E14-8A09-3227EB315CF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA689CFD-FFBB-4E14-8A09-3227EB315CF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA689CFD-FFBB-4E14-8A09-3227EB315CF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA689CFD-FFBB-4E14-8A09-3227EB315CF7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FA689CFD-FFBB-4E14-8A09-3227EB315CF7} = {5F8A3082-677D-4990-BCC0-74C05F847262}
 	EndGlobalSection
 EndGlobal
