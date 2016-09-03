@@ -165,9 +165,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\kSpot.Win.BOL\kSpot.Win.BOL.csproj">
       <Project>{ba041fe5-53e8-4a6f-81e7-1d289b9e8a2c}</Project>
       <Name>kSpot.Win.BOL</Name>
