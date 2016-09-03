@@ -74,8 +74,8 @@ namespace kSpot.Win.UI.ViewModels
         public void GoToRegisterPage()
         {
             //TODO: Wszystko brać ze słownika
-            ResourceDictionary rd = new ResourceDictionary();
-            rd.Source = new Uri(LanguageDictionary.PolishLanguage, UriKind.Relative);
+            //ResourceDictionary rd = new ResourceDictionary();
+            //rd.Source = new Uri(LanguageDictionary.PolishLanguage, UriKind.Relative);
 
             Application.Current.Resources.MergedDictionaries.Add(rd);
             var view = this.GetView();
