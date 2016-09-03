@@ -8,7 +8,7 @@ namespace kSpot.Win.UI.Infrastructure
 {
     public static class NinjectBindings
     {
-        private static IKernel Kernel;
+        private static IKernel Kernel = new StandardKernel();
 
         static NinjectBindings()
         {

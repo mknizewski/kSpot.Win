@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using kSpot.Win.BOL.Dictionaries;
 using kSpot.Win.UI.Infrastructure;
 using kSpot.Win.UI.Interfaces;
 using kSpot.Win.UI.Views;
@@ -74,7 +75,7 @@ namespace kSpot.Win.UI.ViewModels
         {
             //TODO: Wszystko brać ze słownika
             ResourceDictionary rd = new ResourceDictionary();
-            rd.Source = new Uri("/Languages/Lang.pl-PL.xaml", UriKind.Relative);
+            rd.Source = new Uri(LanguageDictionary.PolishLanguage, UriKind.Relative);
 
             Application.Current.Resources.MergedDictionaries.Add(rd);
             var view = this.GetView();
