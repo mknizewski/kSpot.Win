@@ -54,6 +54,7 @@
     <Compile Include="Context\kSpotContext.cs" />
     <Compile Include="Dictionaries\ContextDictionary.cs" />
     <Compile Include="Extensions\ContextExtensions.cs" />
+    <Compile Include="Interfaces\IkSpotContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tables\DictAccountTypes.cs" />
     <Compile Include="Tables\LogsExceptions.cs" />

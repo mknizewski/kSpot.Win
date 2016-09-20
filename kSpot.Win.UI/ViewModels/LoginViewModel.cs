@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using kSpot.Win.BOL.Attributes;
 using kSpot.Win.BOL.Dictionaries;
 using kSpot.Win.UI.Infrastructure;
 using kSpot.Win.UI.Interfaces;
@@ -71,6 +72,7 @@ namespace kSpot.Win.UI.ViewModels
         {
         }
 
+        [HistoryTracker(LoginViewModelDictionary.GoToRegisterPage)]
         public void GoToRegisterPage()
         {
             //TODO: Wszystko brać ze słownika
@@ -85,6 +87,7 @@ namespace kSpot.Win.UI.ViewModels
             loadingGrid.Visibility = Visibility.Visible;
         }
 
+        [HistoryTracker(LoginViewModelDictionary.LogToSystem)]
         public void LogToSystem()
         {
             var mainWindow = NinjectBindings.GetInstance(typeof(IMainWindowViewModel));

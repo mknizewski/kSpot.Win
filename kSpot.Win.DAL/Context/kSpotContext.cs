@@ -1,11 +1,12 @@
 ﻿using kSpot.Win.DAL.Dictionaries;
+using kSpot.Win.DAL.Interfaces;
 using kSpot.Win.DAL.Tables;
 using System;
 using System.Data.Entity;
 
 namespace kSpot.Win.DAL.Context
 {
-    public class kSpotContext : DbContext
+    public class kSpotContext : DbContext, IkSpotContext
     {
         #region Tables
         public DbSet<Users> Users { get; set; }
