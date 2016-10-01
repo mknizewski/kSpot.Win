@@ -13,7 +13,5 @@
         void LogToSystem();
 
         bool CanLogin();
-
-        void Dispose();
     }
 }
