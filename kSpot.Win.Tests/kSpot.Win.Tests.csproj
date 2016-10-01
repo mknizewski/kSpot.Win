@@ -63,6 +63,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Cryptography\Cryptography.csproj">
+      <Project>{fa689cfd-ffbb-4e14-8a09-3227eb315cf7}</Project>
+      <Name>Cryptography</Name>
+    </ProjectReference>
     <ProjectReference Include="..\kSpot.Win.BOL\kSpot.Win.BOL.csproj">
       <Project>{ba041fe5-53e8-4a6f-81e7-1d289b9e8a2c}</Project>
       <Name>kSpot.Win.BOL</Name>
