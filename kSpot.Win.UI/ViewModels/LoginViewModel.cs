@@ -5,12 +5,13 @@ using kSpot.Win.UI.Infrastructure;
 using kSpot.Win.UI.Interfaces;
 using kSpot.Win.UI.Views;
 using System;
+using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 
 namespace kSpot.Win.UI.ViewModels
 {
-    public class LoginViewModel : Screen, ILoginViewModel
+    public class LoginViewModel : BaseView<Screen>, ILoginViewModel
     {
         private readonly IWindowManager _windowManager;
 
@@ -68,8 +69,9 @@ namespace kSpot.Win.UI.ViewModels
             throw new NotImplementedException();
         }
 
-        public void Dispose()
+        protected override void Dispose()
         {
+            base.Dispose();
         }
 
         [HistoryTracker(LoginViewModelDictionary.GoToRegisterPage)]
@@ -80,22 +82,25 @@ namespace kSpot.Win.UI.ViewModels
             //rd.Source = new Uri(LanguageDictionary.PolishLanguage, UriKind.Relative);
 
             //Application.Current.Resources.MergedDictionaries.Add(rd);
-            var view = this.GetView();
+            var view = this.View.GetView();
 
             LoginView w = view as LoginView;
             var loadingGrid = w.LoadingScreen as Grid;
             loadingGrid.Visibility = Visibility.Visible;
+
+            RegisterExecution(MethodInfo.GetCurrentMethod());
         }
 
         [HistoryTracker(LoginViewModelDictionary.LogToSystem)]
         public void LogToSystem()
         {
-            var mainWindow = NinjectBindings.GetInstance(typeof(IMainWindowViewModel));
-
+            var mainWindow = NinjectBindings.GetInstance<IMainWindowViewModel>();
             //TODO: Logika
 
             _windowManager.ShowWindow(mainWindow);
-            TryClose();
+            View.TryClose();
+
+            RegisterExecution(MethodInfo.GetCurrentMethod());
         }
     }
 }

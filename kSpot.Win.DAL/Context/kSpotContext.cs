@@ -16,7 +16,7 @@ namespace kSpot.Win.DAL.Context
         public DbSet<DictAccountTypes> DictAccountTypes { get; set; }
         #endregion
 
-        private kSpotContext()
+        public kSpotContext()
             : base(ContextDictionary.kSpotConnectionString)
         { }
 

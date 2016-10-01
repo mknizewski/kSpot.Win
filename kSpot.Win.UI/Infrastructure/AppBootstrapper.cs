@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using kSpot.Win.DAL.Interfaces;
 using kSpot.Win.UI.Interfaces;
 using System;
 using System.Windows;
@@ -35,6 +36,7 @@ namespace kSpot.Win.UI.Infrastructure
         /// <param name="e"></param>
         protected override void OnUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
         {
+            IkSpotContext kSpotContext = NinjectBindings.GetInstance<IkSpotContext>();
             base.OnUnhandledException(sender, e);
         }
     }

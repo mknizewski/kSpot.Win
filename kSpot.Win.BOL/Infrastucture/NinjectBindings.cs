@@ -1,7 +1,6 @@
 ﻿using kSpot.Win.DAL.Context;
 using kSpot.Win.DAL.Interfaces;
 using Ninject;
-using System;
 
 namespace kSpot.Win.BOL.Infrastucture
 {
@@ -22,9 +21,9 @@ namespace kSpot.Win.BOL.Infrastucture
             Kernel.Bind<IkSpotContext>().To<kSpotContext>();
         }
 
-        public static T GetInstance<T>(Type serviceType)
+        public static T GetInstance<T>()
         {
-            return (T)Kernel.Get(serviceType);
+            return Kernel.TryGet<T>();
         }
     }
 }

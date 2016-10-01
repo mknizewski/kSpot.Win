@@ -16,17 +16,15 @@ namespace kSpot.Win.BOL.Attributes
         {
             this.MethodName = methodName;
             this.HistoryAttributeResxManager = ResourceFactory.GetResourceManagerInstance(ResourceType.HistoryTracker);
-
-            SaveHistoryLog();
         }
 
-        private void SaveHistoryLog()
+        public void SaveHistoryLog()
         {
-            IkSpotContext kSpotContext = NinjectBindings.GetInstance<IkSpotContext>(typeof(IkSpotContext));
+            IkSpotContext kSpotContextDb = NinjectBindings.GetInstance<IkSpotContext>();
 
             //TODO: Dodać logikę zapisu do bazy historii
 
-            kSpotContext.Dispose();
+            kSpotContextDb.Dispose();
         }
     }
 }

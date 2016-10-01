@@ -25,11 +25,17 @@ namespace kSpot.Win.UI.Infrastructure
             Kernel.Bind<IMainWindowViewModel>().To<MainWindowViewModel>();
             Kernel.Bind<IWindowManager>().To<WindowManager>();
             Kernel.Bind<ILoginViewModel>().To<LoginViewModel>();
+            Kernel.Bind<IScreen>().To<Screen>();
         }
 
-        public static object GetInstance(Type serviceType)
+        public static T GetInstance<T>()
         {
-            return Kernel.Get(serviceType);
+            return Kernel.Get<T>();
+        }
+
+        public static object GetInstance(Type type)
+        {
+            return Kernel.Get(type);
         }
     }
 }

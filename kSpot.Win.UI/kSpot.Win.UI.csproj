@@ -114,6 +114,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Infrastructure\AppBootstrapper.cs" />
+    <Compile Include="Infrastructure\BaseView.cs" />
     <Compile Include="Infrastructure\NinjectBindings.cs" />
     <Compile Include="Interfaces\ILoginViewModel.cs" />
     <Compile Include="Interfaces\IMainWindowViewModel.cs" />
