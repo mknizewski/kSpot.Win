@@ -59,6 +59,8 @@
     <Compile Include="Dictionaries\ViewModelsMetaDataDictionary.cs" />
     <Compile Include="Factories\ResourceFactory.cs" />
     <Compile Include="Infrastucture\NinjectBindings.cs" />
+    <Compile Include="Managers\LoginManager\ILoginManager.cs" />
+    <Compile Include="Managers\LoginManager\LoginManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\HistoryTrackerResources.Designer.cs">
       <AutoGen>True</AutoGen>

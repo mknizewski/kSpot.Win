@@ -5,15 +5,19 @@ using kSpot.Win.UI.Infrastructure;
 using kSpot.Win.UI.Interfaces;
 using kSpot.Win.UI.Views;
 using System;
-using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 
 namespace kSpot.Win.UI.ViewModels
 {
-    public class LoginViewModel : BaseView<Screen>, ILoginViewModel
+    public class LoginViewModel : Screen, ILoginViewModel
     {
+        private const int MinimumPasswordLength = 8;
+
         private readonly IWindowManager _windowManager;
+        private string _login;
+        private string _password;
+        private bool _remember;
 
         public LoginViewModel(IWindowManager windowManager)
         {
@@ -24,12 +28,14 @@ namespace kSpot.Win.UI.ViewModels
         {
             get
             {
-                throw new NotImplementedException();
+                return _login;
             }
 
             set
             {
-                throw new NotImplementedException();
+                _login = value;
+                NotifyOfPropertyChange(() => Login);
+                NotifyOfPropertyChange(() => CanLogToSystem);
             }
         }
 
@@ -37,12 +43,14 @@ namespace kSpot.Win.UI.ViewModels
         {
             get
             {
-                throw new NotImplementedException();
+                return _password;
             }
 
             set
             {
-                throw new NotImplementedException();
+                _password = value;
+                NotifyOfPropertyChange(() => Password);
+                NotifyOfPropertyChange(() => CanLogToSystem);
             }
         }
 
@@ -59,19 +67,26 @@ namespace kSpot.Win.UI.ViewModels
             }
         }
 
-        public bool CanLogin()
+        public bool CanLogToSystem
         {
-            throw new NotImplementedException();
+            get { return CanLog(); }
+        }
+
+        public bool CanLog()
+        {
+            if (!string.IsNullOrEmpty(Login))
+            {
+                if (!string.IsNullOrEmpty(Password))
+                    if (Password.Length >= MinimumPasswordLength)
+                        return true;
+            }
+
+            return false;
         }
 
         public bool CheckCredentials()
         {
             throw new NotImplementedException();
-        }
-
-        protected override void Dispose()
-        {
-            base.Dispose();
         }
 
         [HistoryTracker(LoginViewModelDictionary.GoToRegisterPage)]
@@ -82,13 +97,13 @@ namespace kSpot.Win.UI.ViewModels
             //rd.Source = new Uri(LanguageDictionary.PolishLanguage, UriKind.Relative);
 
             //Application.Current.Resources.MergedDictionaries.Add(rd);
-            var view = this.View.GetView();
 
+            var view = GetView();
             LoginView w = view as LoginView;
             var loadingGrid = w.LoadingScreen as Grid;
             loadingGrid.Visibility = Visibility.Visible;
 
-            RegisterExecution(MethodInfo.GetCurrentMethod());
+            //RegisterExecution(MethodInfo.GetCurrentMethod());
         }
 
         [HistoryTracker(LoginViewModelDictionary.LogToSystem)]
@@ -98,9 +113,9 @@ namespace kSpot.Win.UI.ViewModels
             //TODO: Logika
 
             _windowManager.ShowWindow(mainWindow);
-            View.TryClose();
+            TryClose();
 
-            RegisterExecution(MethodInfo.GetCurrentMethod());
+            //RegisterExecution(MethodInfo.GetCurrentMethod());
         }
     }
 }

@@ -8,7 +8,8 @@
         mc:Ignorable="d"
         Title="kSpot" MinHeight="300" MinWidth="300" MaxWidth="500" MaxHeight="500" Height="400" Width="500" Icon="/kSpot.Win.UI;component/kSpot-icon.ico" WindowStartupLocation="CenterScreen"
         xmlns:cm="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro.Platform"
-        xmlns:gif="http://wpfanimatedgif.codeplex.com">
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
+        xmlns:pwbx="clr-namespace:kSpot.Win.UI.Helpers">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
@@ -47,13 +48,13 @@
                     <Viewbox>
                         <Label MinWidth="60" Content="{DynamicResource Login}" HorizontalAlignment="Left" Margin="0 0 0 0"></Label>
                     </Viewbox>
-                    <TextBox Width="auto" Height="auto" Margin="0 5 0 5"></TextBox>
+                    <TextBox Width="auto" x:Name="Login" Height="auto" Margin="0 5 0 5"></TextBox>
                 </DockPanel>
                 <DockPanel Grid.Row="2" Grid.Column="1" VerticalAlignment="Center">
                     <Viewbox>
                         <Label MinWidth="60" Content="{DynamicResource Password}" HorizontalAlignment="Left" Margin="0 0 0 0"></Label>
                     </Viewbox>
-                    <PasswordBox Width="auto" Height="auto" Margin="0 5 0 5"></PasswordBox>
+                    <PasswordBox Width="auto" Height="auto" Margin="0 5 0 5" pwbx:BoundPasswordBox.BoundPassword="{Binding Password, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,NotifyOnValidationError=True,ValidatesOnDataErrors=True}"></PasswordBox>
                 </DockPanel>
                 <Button x:Name="LogToSystem" Grid.Row="3" Grid.Column="1" FontFamily="Open Sans">
                     <Viewbox>

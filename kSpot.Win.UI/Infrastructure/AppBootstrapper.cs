@@ -16,7 +16,6 @@ namespace kSpot.Win.UI.Infrastructure
 
         protected override void Configure()
         {
-            
         }
 
         protected override void OnStartup(object sender, StartupEventArgs e)

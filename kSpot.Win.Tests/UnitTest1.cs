@@ -1,6 +1,4 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Moq;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace kSpot.Win.Tests
 {
@@ -10,17 +8,13 @@ namespace kSpot.Win.Tests
         [TestMethod]
         public void TestMethod1()
         {
-            Mock<IAdd> mock = new Mock<IAdd>();
-            mock.Setup(x => x.Sum())
-                .Returns<int>(sum => sum);
+            Additions ad = new Additions();
+            ad.A = 5;
+            ad.B = 2;
 
-            var ob = mock.Object;
-            ob.A = 5;
-            ob.B = 4;
+            int result = ad.Sum();
 
-            int result = ob.Sum();
-
-            Assert.AreEqual(9, result);
+            Assert.AreEqual(7, result);
         }
     }
 
@@ -28,9 +22,9 @@ namespace kSpot.Win.Tests
     {
         int A { get; set; }
         int B { get; set; }
+
         int Sum();
     }
-
 
     public class Additions : IAdd
     {

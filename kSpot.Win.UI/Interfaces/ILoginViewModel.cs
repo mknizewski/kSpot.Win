@@ -12,6 +12,6 @@
 
         void LogToSystem();
 
-        bool CanLogin();
+        bool CanLog();
     }
 }

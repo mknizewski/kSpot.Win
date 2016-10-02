@@ -14,6 +14,7 @@ namespace kSpot.Win.BOL.Factories
                 case ResourceType.HistoryTracker:
                     resourceManager = new ResourceManager(typeof(HistoryTrackerResources));
                     break;
+
                 default:
                     break;
             }

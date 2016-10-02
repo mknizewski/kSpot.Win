@@ -9,12 +9,14 @@ namespace kSpot.Win.DAL.Context
     public class kSpotContext : DbContext, IkSpotContext
     {
         #region Tables
+
         public DbSet<Users> Users { get; set; }
         public DbSet<UsersProfilesBackup> UsersProfilesBackup { get; set; }
         public DbSet<News> News { get; set; }
         public DbSet<LogsExceptions> LogsExceptions { get; set; }
         public DbSet<DictAccountTypes> DictAccountTypes { get; set; }
-        #endregion
+
+        #endregion Tables
 
         public kSpotContext()
             : base(ContextDictionary.kSpotConnectionString)

@@ -1,6 +1,4 @@
 ﻿using Caliburn.Micro;
-using kSpot.Win.DAL.Context;
-using kSpot.Win.DAL.Interfaces;
 using kSpot.Win.UI.Interfaces;
 using kSpot.Win.UI.ViewModels;
 using Ninject;
