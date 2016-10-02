@@ -38,7 +38,7 @@ namespace kSpot.Win.BOL.Managers.LoginManager
             if (!string.IsNullOrEmpty(password))
             {
                 if (password.Length >= MinimumPasswordSize)
-                    return Regex.IsMatch(password, PasswordPatternDigital) || Regex.IsMatch(password, PasswordPatternUpperCase);
+                    return Regex.IsMatch(password, PasswordPatternDigital) && Regex.IsMatch(password, PasswordPatternUpperCase);
             }
 
             return false;
