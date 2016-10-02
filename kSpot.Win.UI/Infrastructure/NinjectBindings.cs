@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using kSpot.Win.BOL.Managers.LoginManager;
 using kSpot.Win.UI.Interfaces;
 using kSpot.Win.UI.ViewModels;
 using Ninject;
@@ -24,6 +25,7 @@ namespace kSpot.Win.UI.Infrastructure
             Kernel.Bind<IWindowManager>().To<WindowManager>();
             Kernel.Bind<ILoginViewModel>().To<LoginViewModel>();
             Kernel.Bind<IScreen>().To<Screen>();
+            Kernel.Bind<ILoginManager>().To<LoginManager>();
         }
 
         public static T GetInstance<T>()
