@@ -1,12 +1,9 @@
 ﻿using Caliburn.Micro;
 using kSpot.Win.BOL.Attributes;
 using kSpot.Win.BOL.Dictionaries;
+using kSpot.Win.BOL.Managers.LoginManager;
 using kSpot.Win.UI.Infrastructure;
 using kSpot.Win.UI.Interfaces;
-using kSpot.Win.UI.Views;
-using System;
-using System.Windows;
-using System.Windows.Controls;
 
 namespace kSpot.Win.UI.ViewModels
 {
@@ -15,13 +12,16 @@ namespace kSpot.Win.UI.ViewModels
         private const int MinimumPasswordLength = 8;
 
         private readonly IWindowManager _windowManager;
+        private readonly ILoginManager _loginManager;
+
         private string _login;
         private string _password;
         private bool _remember;
 
-        public LoginViewModel(IWindowManager windowManager)
+        public LoginViewModel(IWindowManager windowManager, ILoginManager loginManager)
         {
             this._windowManager = windowManager;
+            this._loginManager = loginManager;
         }
 
         public string Login
@@ -58,12 +58,12 @@ namespace kSpot.Win.UI.ViewModels
         {
             get
             {
-                throw new NotImplementedException();
+                return _remember;
             }
 
             set
             {
-                throw new NotImplementedException();
+                _remember = value;
             }
         }
 
@@ -75,35 +75,15 @@ namespace kSpot.Win.UI.ViewModels
         public bool CanLog()
         {
             if (!string.IsNullOrEmpty(Login))
-            {
-                if (!string.IsNullOrEmpty(Password))
-                    if (Password.Length >= MinimumPasswordLength)
-                        return true;
-            }
+                return _loginManager.ValidatePasswordByPattern(Password);
 
             return false;
-        }
-
-        public bool CheckCredentials()
-        {
-            throw new NotImplementedException();
         }
 
         [HistoryTracker(LoginViewModelDictionary.GoToRegisterPage)]
         public void GoToRegisterPage()
         {
-            //TODO: Wszystko brać ze słownika
-            //ResourceDictionary rd = new ResourceDictionary();
-            //rd.Source = new Uri(LanguageDictionary.PolishLanguage, UriKind.Relative);
 
-            //Application.Current.Resources.MergedDictionaries.Add(rd);
-
-            var view = GetView();
-            LoginView w = view as LoginView;
-            var loadingGrid = w.LoadingScreen as Grid;
-            loadingGrid.Visibility = Visibility.Visible;
-
-            //RegisterExecution(MethodInfo.GetCurrentMethod());
         }
 
         [HistoryTracker(LoginViewModelDictionary.LogToSystem)]
@@ -116,6 +96,19 @@ namespace kSpot.Win.UI.ViewModels
             TryClose();
 
             //RegisterExecution(MethodInfo.GetCurrentMethod());
+        }
+
+        public void Dispose()
+        {
+            _loginManager.Dispose();
+        }
+
+        protected override void OnDeactivate(bool close)
+        {
+            base.OnDeactivate(close);
+
+            if (close)
+                Dispose();
         }
     }
 }
